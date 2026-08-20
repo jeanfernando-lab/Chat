@@ -4,18 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>FedChat - Pro Edition</title>
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <!-- FontAwesome Ikòn Pro -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- 1. PAJ KONEKSYON (Auth Screen) -->
+    <!-- PAJ KONEKSYON -->
     <div class="glass-container active" id="authScreen">
         <div class="auth-content">
-            <!-- Logo FedChat SVG -->
             <div class="logo-container" style="text-align: center; margin-bottom: 20px;">
                 <svg width="150" height="40" viewBox="0 0 150 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10 20 L25 5 L40 20 L25 35 Z" fill="url(#gradientAuth)"/>
@@ -44,9 +41,8 @@
         </div>
     </div>
 
-    <!-- 2. PAJ CHAT LA (Main App) -->
-    <div class="glass-container" id="mainApp" style="display: none;">
-        <!-- Header -->
+    <!-- PAJ CHAT LA -->
+    <div class="glass-container" id="mainApp">
         <header class="chat-header">
             <div class="logo-container">
                 <svg width="130" height="35" viewBox="0 0 150 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -68,7 +64,6 @@
         </header>
 
         <div class="chat-body-wrapper">
-            <!-- Sidebar -->
             <aside class="contacts-sidebar">
                 <h3><i class="fa-solid fa-users"></i> Kontak</h3>
                 <div class="user-item">
@@ -77,10 +72,16 @@
                 </div>
             </aside>
 
-            <!-- Zòn Chat Prensipal la -->
             <main class="chat-main-column">
                 <div class="messages-area" id="messagesArea">
                     <div class="system-message">Koneksyon sekirize. Kòmanse pale.</div>
+                </div>
+
+                <!-- Panèl Stickers -->
+                <div class="stickers-panel" id="stickersPanel">
+                    <img src="https://cdn-icons-png.flaticon.com/128/4786/4786093.png" class="sticker-item" alt="Sticker">
+                    <img src="https://cdn-icons-png.flaticon.com/128/4786/4786105.png" class="sticker-item" alt="Sticker">
+                    <img src="https://cdn-icons-png.flaticon.com/128/4786/4786071.png" class="sticker-item" alt="Sticker">
                 </div>
 
                 <div class="input-area">
