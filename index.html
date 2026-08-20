@@ -2,7 +2,7 @@
 <html lang="ht">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>FedChat - Pro Edition</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
@@ -12,16 +12,48 @@
 </head>
 <body>
 
-    <div class="glass-container active" id="mainApp">
-        <!-- Header ak Logo Pro -->
+    <!-- 1. PAJ KONEKSYON (Auth Screen) -->
+    <div class="glass-container active" id="authScreen">
+        <div class="auth-content">
+            <!-- Logo FedChat SVG -->
+            <div class="logo-container" style="text-align: center; margin-bottom: 20px;">
+                <svg width="150" height="40" viewBox="0 0 150 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 20 L25 5 L40 20 L25 35 Z" fill="url(#gradientAuth)"/>
+                    <text x="50" y="28" font-family="'Poppins', sans-serif" font-weight="bold" font-size="28" fill="#ffffff">Fed<tspan fill="#00ffcc">Chat</tspan></text>
+                    <defs>
+                        <linearGradient id="gradientAuth" x1="10" y1="5" x2="40" y2="35" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#00ffcc"/>
+                            <stop offset="1" stop-color="#0088cc"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            
+            <h2 style="text-align: center; font-size: 18px; margin-bottom: 20px;">Konekte nan espas ou</h2>
+            
+            <div class="input-group">
+                <input type="text" id="idInput" placeholder="Antre ID ou">
+            </div>
+            <div class="input-group">
+                <input type="password" id="passwordInput" placeholder="Modpas ou">
+            </div>
+            
+            <button class="btn-primary" id="loginBtn">Konekte</button>
+            
+            <p class="switch-text">Ou pa gen kont? <span id="switchBtn">Kreye youn</span></p>
+        </div>
+    </div>
+
+    <!-- 2. PAJ CHAT LA (Main App) -->
+    <div class="glass-container" id="mainApp" style="display: none;">
+        <!-- Header -->
         <header class="chat-header">
             <div class="logo-container">
-                <!-- Logo FedChat SVG -->
                 <svg width="130" height="35" viewBox="0 0 150 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10 20 L25 5 L40 20 L25 35 Z" fill="url(#gradient)"/>
+                    <path d="M10 20 L25 5 L40 20 L25 35 Z" fill="url(#gradientMain)"/>
                     <text x="50" y="28" font-family="'Poppins', sans-serif" font-weight="bold" font-size="24" fill="#ffffff">Fed<tspan fill="#00ffcc">Chat</tspan></text>
                     <defs>
-                        <linearGradient id="gradient" x1="10" y1="5" x2="40" y2="35" gradientUnits="userSpaceOnUse">
+                        <linearGradient id="gradientMain" x1="10" y1="5" x2="40" y2="35" gradientUnits="userSpaceOnUse">
                             <stop stop-color="#00ffcc"/>
                             <stop offset="1" stop-color="#0088cc"/>
                         </linearGradient>
@@ -31,7 +63,7 @@
             <div class="header-actions">
                 <button class="pro-btn-icon" title="Apèl Odyo"><i class="fa-solid fa-phone"></i></button>
                 <button class="pro-btn-icon" title="Apèl Videyo"><i class="fa-solid fa-video"></i></button>
-                <button class="pro-btn-icon" title="Anviwònman"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                <button class="pro-btn-icon" id="logoutBtn" title="Dekonekte"><i class="fa-solid fa-right-from-bracket"></i></button>
             </div>
         </header>
 
@@ -49,14 +81,6 @@
             <main class="chat-main-column">
                 <div class="messages-area" id="messagesArea">
                     <div class="system-message">Koneksyon sekirize. Kòmanse pale.</div>
-                    <!-- Mesaj yo ap parèt isit la -->
-                </div>
-
-                <!-- Panèl Stickers (Kache pa defo) -->
-                <div class="stickers-panel" id="stickersPanel">
-                    <img src="https://cdn-icons-png.flaticon.com/128/4786/4786093.png" class="sticker-item" alt="Sticker 1">
-                    <img src="https://cdn-icons-png.flaticon.com/128/4786/4786105.png" class="sticker-item" alt="Sticker 2">
-                    <img src="https://cdn-icons-png.flaticon.com/128/4786/4786071.png" class="sticker-item" alt="Sticker 3">
                 </div>
 
                 <div class="input-area">
@@ -77,10 +101,6 @@
         </div>
     </div>
 
-    <!-- Firebase Scripts (Mete vèsyon ou abitye itilize yo la) -->
-    <!-- <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script> -->
-    <!-- <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script> -->
-    
     <script src="app.js"></script>
 </body>
 </html>
